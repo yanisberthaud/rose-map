@@ -10,14 +10,12 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
       <div>
         <h1 style={{ textAlign: 'center', color: '#d63384', margin: '1rem' }}>
-        🌸 Octobre Rose en Hauts-de-France
+        🌸 Octobre Rose en Hauts-de-France 🌸
         </h1>
         <CarteOctobreRose />
       </div>
-    </>
   )
 }
 
