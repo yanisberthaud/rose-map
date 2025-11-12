@@ -77,11 +77,7 @@ export default function Footer() {
         <div className="footer-content">
           <div className="footer-logo">
             <img src={logo} alt="RoseMap Logo" />
-            <h3>RoseMap</h3>
-            <p>
-              Ensemble, soutenons la recherche et la prévention contre le cancer
-              du sein.
-            </p>
+            <p>Ensemble, soutenons la recherche et la prévention contre le cancer du sein.</p>
           </div>
 
           <div className="footer-links">

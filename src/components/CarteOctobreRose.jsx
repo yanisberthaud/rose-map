@@ -5,6 +5,7 @@ import 'leaflet/dist/leaflet.css'
 import 'leaflet.markercluster/dist/MarkerCluster.css'
 import 'leaflet.markercluster/dist/MarkerCluster.Default.css'
 import 'leaflet.markercluster'
+import './CarteOctobreRose.css'
 
 const roseIcon = new L.Icon({
   iconUrl: '/icon.png',
@@ -60,16 +61,35 @@ export default function CarteOctobreRose() {
   ]
 
   return (
-    <div style={{ padding: '1rem' }}>
-
-      <MapContainer center={[50.3, 2.8]} zoom={8} style={{ height: '600px', width: '100%', borderRadius: '12px' }}>
-        <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
-
-        <MarkerCluster lieux={lieux} icon={roseIcon} />
-      </MapContainer>
+    <div className="carte-section">
+      <div className="carte-wrapper">
+        <div className="carte-map">
+          <MapContainer
+            center={[50.3, 2.8]}
+            zoom={8}
+            style={{ height: '600px', width: '100%', borderRadius: '12px' }}
+          >
+            <TileLayer
+              attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>'
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
+            <MarkerCluster lieux={lieux} icon={roseIcon} />
+          </MapContainer>
+        </div>
+        <div className="carte-text">
+          <h2>Découvrez les actions Octobre Rose</h2>
+          <p>
+            Cette carte interactive vous permet de visualiser tous les événements,
+            stands et actions de sensibilisation organisés dans la région.
+            Cliquez sur les marqueurs pour obtenir plus d’informations sur
+            chaque lieu.
+          </p>
+          <p>
+            Chaque point sur la carte représente un lieu où Octobre Rose agit
+            pour soutenir la prévention, le dépistage et la recherche contre le cancer du sein.
+          </p>
+        </div>
+      </div>
     </div>
   )
 }

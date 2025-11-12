@@ -50,6 +50,7 @@
   margin-bottom: 25px;
   color: #ffe0eb;
   max-width: 400px;
+  justify-content: center;
 }
 
 /* Boutons Don / Rejoins-nous */
@@ -137,11 +138,6 @@
   min-width: 280px;
 }
 
-.contact-form h3 {
-  font-size: 1.4rem;
-  margin-bottom: 5px;
-}
-
 .contact-form p {
   color: #ffe0eb;
   margin-bottom: 15px;
@@ -187,15 +183,15 @@
 }
 
 .footer-logo img {
-  width: 50px;
+  width: 240px;
+
   margin-bottom: 10px;
 }
-
-.footer-logo h3 {
-  color: #e91e63;
-  margin-bottom: 5px;
+.footer-logo p {
+  max-width: 300px;
+  font-size: 0.9rem;
+  color: #ccc;
 }
-
 .footer-links ul {
   list-style: none;
   padding: 0;

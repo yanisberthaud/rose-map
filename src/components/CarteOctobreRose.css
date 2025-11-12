@@ -1,0 +1,41 @@
+.carte-section {
+  padding: 60px 40px;
+  background: #e91e63;
+}
+
+
+.carte-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.carte-map {
+  flex: 1 1 500px;
+  max-width: 600px;
+  border: #ff7f56 10px solid;
+  border-radius: 20px;
+}
+
+.carte-text {
+  flex: 1 1 300px;
+  max-width: 500px;
+  background: #ffffff;
+  border: 10px solid #ff7f56;
+  padding: 35px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* ombre douce */
+}
+
+.carte-text h2 {
+  color: #e91e63;
+  margin-bottom: 20px;
+}
+
+.carte-text p {
+  color: #5a4638; /* texte lisible sur fond blanc */
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
