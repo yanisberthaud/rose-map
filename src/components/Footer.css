@@ -1,0 +1,225 @@
+/* Sections intermédiaires */
+.map-section, .story-section {
+  padding: 80px 40px;
+  text-align: center;
+  background-color: white;
+}
+
+.story-section {
+  background: linear-gradient(to bottom, white, #fff5f8);
+}
+
+.story-section h2 {
+  color: #e91e63;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.story-section p {
+  max-width: 600px;
+  margin: 0 auto;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Contact Section */
+.contact-section {
+  background: linear-gradient(90deg, #e91e63, #ff7f56);
+  color: white;
+  padding: 80px 40px;
+}
+
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.contact-text {
+  flex: 1;
+  min-width: 280px;
+}
+
+.contact-text h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.contact-text p {
+  margin-bottom: 25px;
+  color: #ffe0eb;
+  max-width: 400px;
+}
+
+/* Boutons Don / Rejoins-nous */
+.contact-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.btn-ct {
+  border: 2px solid white;
+  background: transparent;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-ct.active {
+  background: white;
+  color: #ff007a;
+}
+
+.btn-ct:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Formulaire */
+.contact-form {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 25px;
+  max-width: 400px;
+  margin: 20px auto;
+  text-align: left;
+  color: white;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.join {
+  background: white;
+  color: #ff007a;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.join:hover {
+  background: #ffe6ef;
+}
+
+/* Animation douce d’apparition */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contact-form {
+  flex: 1;
+  min-width: 280px;
+}
+
+.contact-form h3 {
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+}
+
+.contact-form p {
+  color: #ffe0eb;
+  margin-bottom: 15px;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.contact-form button {
+  background: white;
+  color: #e91e63;
+  border: none;
+  border-radius: 30px;
+  padding: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Footer */
+.footer {
+  background: #0f0f1a;
+  color: white;
+  padding: 50px 40px 20px;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.footer-logo img {
+  width: 50px;
+  margin-bottom: 10px;
+}
+
+.footer-logo h3 {
+  color: #e91e63;
+  margin-bottom: 5px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.footer-social .icons {
+  display: flex;
+  gap: 15px;
+}
+
+.footer-social a {
+  color: white;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  color: #ccc;
+  font-size: 0.9rem;
+}
