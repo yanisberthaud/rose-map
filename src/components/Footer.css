@@ -1,4 +1,3 @@
-/* Sections intermédiaires */
 .map-section, .story-section {
   padding: 80px 40px;
   text-align: center;
@@ -22,17 +21,17 @@
   line-height: 1.6;
 }
 
-/* Contact Section */
 .contact-section {
   background: linear-gradient(90deg, #e91e63, #ff7f56);
   color: white;
   padding: 80px 40px;
+  text-align: center;
 }
 
 .contact-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   gap: 40px;
 }
 
@@ -50,10 +49,9 @@
   margin-bottom: 25px;
   color: #ffe0eb;
   max-width: 400px;
-  justify-content: center;
+  margin: 0 auto 25px;
 }
 
-/* Boutons Don / Rejoins-nous */
 .contact-buttons {
   display: flex;
   justify-content: center;
@@ -81,7 +79,6 @@
   background: rgba(255, 255, 255, 0.2);
 }
 
-/* Formulaire */
 .contact-form {
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 15px;
@@ -121,7 +118,6 @@
   background: #ffe6ef;
 }
 
-/* Animation douce d’apparition */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -168,7 +164,6 @@
   cursor: pointer;
 }
 
-/* Footer */
 .footer {
   background: #0f0f1a;
   color: white;
@@ -184,7 +179,6 @@
 
 .footer-logo img {
   width: 240px;
-
   margin-bottom: 10px;
 }
 .footer-logo p {
@@ -207,15 +201,504 @@
   gap: 15px;
 }
 
+/* 🚀 STYLES FINAUX DES LOGOS SOCIAUX AVEC LIENS EXTERNES 🚀 */
 .footer-social a {
-  color: white;
-  font-size: 1.2rem;
+  /* Masque tout contenu (texte, icône Font Awesome, etc.) */
+  color: transparent; 
+  font-size: 0;
   text-decoration: none;
+  
+  /* Définit la taille de la zone du logo */
+  display: block; 
+  width: 30px;
+  height: 30px;
+  
+  /* Assure que l'image de fond s'affiche correctement */
+  background-size: 80%; /* Règle la taille du logo dans la boîte de 30px */
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: opacity 0.3s ease;
 }
+
+.footer-social a:hover {
+    opacity: 0.7;
+}
+
+.footer-social a.facebook-icon {
+    background-image: url('https://img.icons8.com/ios-filled/50/ffffff/facebook-new.png'); 
+}
+
+.footer-social a.instagram-icon {
+    background-image: url('https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png');
+}
+
+.footer-social a.twitter-icon {
+    background-image: url('https://img.icons8.com/ios-filled/50/ffffff/twitter-squared.png'); 
+}
+/* ------------------------------------------------------------- */
+
 
 .footer-bottom {
   text-align: center;
   margin-top: 30px;
   color: #ccc;
   font-size: 0.9rem;
+}
+
+.avancees-section-container {
+    padding: 60px 20px;
+    background-color: #fff;
+    text-align: center;
+    position: relative;
+    overflow: hidden; 
+}
+
+.avancees-section-container::before {
+    content: '';
+    position: absolute;
+    bottom: -150px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200%;
+    height: 300px;
+    background: linear-gradient(to top, rgba(255, 192, 203, 0.4), transparent);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.avancees-title {
+    font-size: 1.8rem;
+    color: #0047a9;
+    margin-bottom: 50px;
+    font-weight: 800;
+    line-height: 1.2;
+    z-index: 1;
+    position: relative;
+}
+
+.timeline-content-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.timeline-card {
+    display: flex;
+    max-width: 800px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    min-height: 300px;
+    z-index: 1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.card-image-placeholder {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    /* Styles pour afficher l'image de fond */
+    background-size: contain; /* L'image est contenue et entièrement visible */
+    background-position: center; /* Centre l'image au milieu du conteneur */
+    background-repeat: no-repeat; /* N'affiche l'image qu'une seule fois */
+    background-color: #0047a9; /* REMISE DU FOND BLEU ORIGINAL */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 250px;
+}
+
+.image-overlay-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Dégradé bleu/blanc léger */
+    background: linear-gradient(135deg, rgba(0, 71, 169, 0.4), rgba(255, 255, 255, 0.2)); 
+    z-index: 0;
+}
+
+.year-overlay {
+    font-size: 5rem;
+    font-weight: 900;
+    color: white; /* Remis en blanc pour contraster avec le fond bleu */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.card-text-content {
+    flex: 1;
+    padding: 30px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #f7f7f7;
+    animation: fadeInContent 0.5s ease-in-out;
+}
+
+@keyframes fadeInContent {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.card-title {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.card-description {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+.timeline-nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    z-index: 1;
+    position: relative;
+}
+
+.year-button {
+    background: none;
+    border: 2px solid #ccc;
+    color: #555;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.year-button:hover {
+    border-color: #e91e63;
+    color: #e91e63;
+}
+
+.year-button.active {
+    background: #e91e63;
+    color: white;
+    border-color: #e91e63;
+    transform: scale(1.05);
+}
+
+.soutien-button {
+    background: #ff007a;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(255, 0, 122, 0.4);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    z-index: 1;
+    position: relative;
+}
+
+.soutien-button:hover {
+    background: #e91e63;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .timeline-card {
+        flex-direction: column;
+        max-width: 100%;
+        margin: 0 10px;
+    }
+
+    .card-image-placeholder {
+        height: 200px;
+    }
+
+    .card-text-content {
+        padding: 20px;
+    }
+}
+
+
+.temoignages-section-container {
+    background-color: #ff007a; 
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.temoignages-title {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 50px;
+    font-weight: 800;
+}
+
+.temoignages-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.temoignage-card {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, flex-basis 0.5s ease-in-out, min-width 0.5s ease-in-out;
+    flex: 1;
+    min-width: 280px;
+    cursor: pointer;
+}
+
+.temoignage-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.video-card {
+    position: relative;
+    min-height: 400px;
+    display: flex;
+    align-items: flex-end;
+    flex-basis: 30%;
+    background-color: white; 
+    padding: 0;
+    overflow: hidden; 
+}
+
+.video-card-preview {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover; 
+    background-position: center; 
+    display: flex;
+    align-items: flex-end;
+    transition: opacity 0.3s;
+}
+
+
+.video-player-container {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    min-height: 400px;
+}
+
+.video-player-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 15px; 
+}
+
+.video-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    line-height: 30px;
+    padding: 0;
+    transition: background 0.3s;
+}
+
+.video-close-btn:hover {
+    background: #ff007a;
+}
+
+.temoignage-card.video-card {
+    flex-basis: 30%;
+    min-height: 400px;
+    transition: all 0.5s ease-in-out; 
+}
+
+.temoignage-card.video-card.playing-large {
+    flex-basis: 65%;
+    min-width: 600px;
+}
+
+
+.card-overlay {
+    position: relative;
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+}
+
+.name-tag {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.play-icon {
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    background-color: white;
+    color: #ff007a;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    transition: transform 0.2s ease;
+}
+
+.play-icon:hover {
+    transform: scale(1.1);
+}
+
+.quote-card {
+    background-color: white;
+    padding: 30px; 
+    text-align: left;
+    display: flex; 
+    position: relative;
+    flex-basis: 40%; 
+    gap: 20px; 
+    align-items: center; 
+}
+
+.quote-content-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%; 
+}
+
+.quote-image-container {
+    flex-shrink: 0; 
+    width: 120px; 
+    height: 120px;
+    overflow: hidden;
+    border-radius: 50%; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.quote-person-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+.quote-text-content {
+    flex-grow: 1; 
+    position: relative; 
+    z-index: 3;
+}
+
+.quote-mark {
+    font-size: 4rem;
+    color: #e91e63;
+    font-family: 'Georgia', serif;
+    line-height: 0.5;
+    display: block;
+    margin-bottom: 20px;
+    position: absolute; 
+    top: -10px; 
+    left: -15px; 
+    z-index: 4;
+    opacity: 0.7; 
+}
+
+.quote-text {
+    font-size: 1.1rem;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    padding-top: 20px; 
+}
+
+.quote-text strong {
+    color: #ff007a;
+}
+
+.quote-name {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #e91e63;
+    display: block;
+    margin-top: 15px;
+}
+
+.quote-background-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ff007a;
+    opacity: 0.05;
+    z-index: 1;
+}
+
+@media (max-width: 900px) {
+    .temoignages-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    .temoignage-card {
+        flex-basis: 100%;
+        max-width: 500px;
+    }
+    .quote-card {
+        padding: 20px; 
+    }
+    .quote-content-wrapper {
+        flex-direction: column; 
+        text-align: center;
+    }
+    .quote-image-container {
+        margin-bottom: 15px; 
+    }
+    .quote-text-content {
+        padding-top: 0; 
+    }
+    .quote-mark {
+        position: static; 
+        margin-bottom: 0;
+        line-height: 1;
+    }
+    
+    .temoignage-card.video-card.playing-large {
+        flex-basis: 100%; 
+        min-width: unset;
+    }
 }
