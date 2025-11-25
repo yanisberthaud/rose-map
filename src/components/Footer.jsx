@@ -1,6 +1,10 @@
+// Footer.jsx
 import React, { useState, useRef } from "react";
+import { Link, useNavigate } from "react-router-dom"; 
 import "./Footer.css";
-import logo from "/LOGO.png";
+// NOTE: Remplacez par le chemin correct vers votre logo.
+import logo from "/LOGO.png"; 
+
 
 const AvanceesData = [
   {
@@ -56,21 +60,28 @@ const TemoignagesData = [
 
 
 export default function Footer() {
-  const [activeForm, setActiveForm] = useState("don");
+  const [activeForm, setActiveForm] = useState("rejoindre"); 
   const [activeYear, setActiveYear] = useState(AvanceesData[0].year);
   const activeAvancee = AvanceesData.find(d => d.year === activeYear) || AvanceesData[0];
   const contactSectionRef = useRef(null);
   const [playingVideoId, setPlayingVideoId] = useState(null);
+  
+  const navigate = useNavigate(); 
 
-  const scrollToDon = () => {
-    if (contactSectionRef.current) {
-      contactSectionRef.current.scrollIntoView({ behavior: 'smooth' });
-    }
+  // Fonction pour naviguer vers la page Don
+  const navigateToDonPage = () => {
+    navigate("/don");
   };
-
+  
+  // Fonction pour gérer le clic sur une carte vidéo
+  const handleVideoCardClick = (youtubeId) => {
+    setPlayingVideoId(youtubeId);
+  };
+  
   return (
     <div className="page-sections-container">
 
+      {/* SECTION TÉMOIGNAGES */}
       <section className="temoignages-section-container">
         <h2 className="temoignages-title">
           PROTÉGEZ TOUTES LES FEMMES QUE VOUS AIMEZ
@@ -81,6 +92,7 @@ export default function Footer() {
             <div
               key={temoignage.name}
               className={`temoignage-card ${temoignage.type}-card ${playingVideoId === temoignage.youtubeId ? 'playing-large' : ''}`}
+              onClick={temoignage.type === 'video' && playingVideoId !== temoignage.youtubeId ? () => handleVideoCardClick(temoignage.youtubeId) : undefined}
             >
               {temoignage.type === 'quote' ? (
                 <div className="quote-content-wrapper">
@@ -118,7 +130,6 @@ export default function Footer() {
                   </div>
                 ) : (
                   <div className="video-card-preview"
-                    onClick={() => setPlayingVideoId(temoignage.youtubeId)}
                     style={{ backgroundImage: `url(https://img.youtube.com/vi/${temoignage.youtubeId}/hqdefault.jpg)` }}
                   >
                     <div className="card-overlay">
@@ -133,6 +144,7 @@ export default function Footer() {
         </div>
       </section>
 
+      {/* SECTION AVANCÉES */}
       <section className="avancees-section-container">
         <h2 className="avancees-title">
           <span role="img" aria-label="cœur">❤️</span> PLUS DE 25 ANS D'AVANCÉES DÉCISIVES POUR LES MALADES ! <span role="img" aria-label="cœur">❤️</span>
@@ -167,23 +179,39 @@ export default function Footer() {
           ))}
         </div>
 
+        {/* BOUTON DANS AVANCÉES -> PAGE DON (Utilisation de useNavigate) */}
         <button
           className="soutien-button"
-          onClick={scrollToDon}
+          onClick={navigateToDonPage} 
         >
           <span role="img" aria-label="ruban rose">🎗️</span> JE SOUTIENS LA RECHERCHE
         </button>
       </section>
 
+      {/* SECTION HISTOIRE */}
       <section className="story-section">
-        <h2>Histoire Octobre rose</h2>
+        <h2>Histoire d'Octobre Rose</h2>
         <p>
           Depuis plus de 30 ans, Octobre Rose sensibilise à la lutte contre le
           cancer du sein. Des événements sont organisés partout en France pour
           encourager le dépistage précoce et soutenir la recherche.
         </p>
+        <p>
+            Tout a commencé en 1985 aux États-Unis, lorsque l'American Cancer Society et la société pharmaceutique Imperial Chemical Industries ont lancé une campagne pour promouvoir la mammographie. Depuis, le symbole du ruban rose, adopté en 1991, est devenu universel. Ce mouvement a permis non seulement de collecter des fonds essentiels, mais aussi de **briser le silence** et de faire progresser significativement les traitements. Le combat ne fait que commencer, mais l'histoire d'Octobre Rose est celle d'une solidarité mondiale en action.
+        </p>
+        <div className="story-cta">
+            {/* Lien vers page histoire détaillée */}
+            <Link to="/histoire" className="btn-story">
+              En savoir plus sur l'histoire complète
+            </Link>
+            {/* Lien vers la carte */}
+            <Link to="/carte-octobre-rose" className="btn-story map-link">
+              Voir la Carte des Événements
+            </Link>
+        </div>
       </section>
 
+      {/* SECTION CONTACT */}
       <section className="contact-section" ref={contactSectionRef}>
         <div className="contact-container">
           <div className="contact-text">
@@ -194,12 +222,13 @@ export default function Footer() {
             </p>
 
             <div className="contact-buttons">
-              <button
-                className={`btn-ct ${activeForm === "don" ? "active" : ""}`}
-                onClick={() => setActiveForm("don")}
+              {/* BOUTON DANS CONTACT -> PAGE DON (Utilisation de Link) */}
+              <Link 
+                  to="/don" 
+                  className={`btn-ct ${activeForm !== "rejoindre" ? "active" : ""}`}
               >
-                Dons
-              </button>
+                Faire un Don
+              </Link>
               <button
                 className={`btn-ct ${activeForm === "rejoindre" ? "active" : ""}`}
                 onClick={() => setActiveForm("rejoindre")}
@@ -209,21 +238,6 @@ export default function Footer() {
             </div>
           </div>
         </div>
-
-        {activeForm === "don" && (
-          <div className="contact-form">
-            <h3>Faire un don</h3>
-            <p>Chaque contribution aide la recherche et le soutien des malades.</p>
-            <form>
-              <input type="number" placeholder="Montant (€)" required />
-              <input type="text" placeholder="Nom" required />
-              <input type="email" placeholder="Adresse Mail" required />
-              <button className="join" type="submit">
-                Faire un don
-              </button>
-            </form>
-          </div>
-        )}
 
         {activeForm === "rejoindre" && (
           <div className="contact-form">
@@ -241,6 +255,7 @@ export default function Footer() {
         )}
       </section>
 
+      {/* PIED DE PAGE (FOOTER) */}
       <footer className="footer">
         <div className="footer-content">
           <div className="footer-logo">
@@ -251,19 +266,22 @@ export default function Footer() {
           <div className="footer-links">
             <h4>Liens rapides</h4>
             <ul>
-              <li>Accueil</li>
-              <li>Nos événements</li>
-              <li>Faire un don</li>
-              <li>Contact</li>
+              <li><Link to="/">Accueil</Link></li>
+              <li><Link to="/evenements">Nos événements</Link></li>
+              {/* LIEN RAPIDE DANS FOOTER -> PAGE DON */}
+              <li><Link to="/don">Faire un don</Link></li> 
+              <li><Link to="/carte-octobre-rose">La Carte Octobre Rose</Link></li> 
+              <li><Link to="/contact">Contact</Link></li>
             </ul>
           </div>
 
           <div className="footer-social">
             <h4>Suivez-nous</h4>
             <div className="icons">
-              <a href="#" className="facebook-icon" aria-label="Facebook"></a>
-              <a href="#" className="instagram-icon" aria-label="Instagram"></a>
-              <a href="#" className="twitter-icon" aria-label="Twitter / X"></a>
+              {/* Ces classes utilisent les images de fond CSS que nous avons définies */}
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="facebook-icon" aria-label="Facebook"></a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="instagram-icon" aria-label="Instagram"></a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="twitter-icon" aria-label="Twitter / X"></a>
             </div>
           </div>
         </div>
