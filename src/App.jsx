@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 
-import Nav from './components/Nav';      
+import Nav from './components/Nav';      
 import Footer from './components/Footer'; 
 import DonPage from './components/DonPage';
 import CarteOctobreRose from './components/CarteOctobreRose';
@@ -9,10 +9,10 @@ import CarteOctobreRose from './components/CarteOctobreRose';
 // 🛑 MODIFICATION CLÉ 1 : Home rend maintenant uniquement le contenu de la page d'accueil.
 // Le Nav et le Footer sont gérés dans AppContent pour être masqués sur la page carte.
 function Home() {
-    return (
-        <>
-        </>
-    );
+    return (
+        <>
+        </>
+    );
 }
 
 function AppContent() {
@@ -65,9 +65,9 @@ function AppContent() {
 
 // Le composant racine qui fournit le Router
 export default function App() {
-    return (
-        <Router>
-            <AppContent />
-        </Router>
-    );
+    return (
+        <Router>
+            <AppContent />
+        </Router>
+    );
 }

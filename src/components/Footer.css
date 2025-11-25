@@ -5,22 +5,72 @@
 }
 
 .story-section {
-  background: linear-gradient(to bottom, white, #fff5f8);
+    /* Utilisation de la couleur de fond principale ou blanche */
+    background: #ffffff; 
+    padding: 60px 40px;
+    margin: 0 auto;
+    max-width: 1200px; /* Limite la largeur du contenu sur les très grands écrans */
 }
 
 .story-section h2 {
-  color: #e91e63;
-  font-size: 1.8rem;
-  margin-bottom: 20px;
+    color: #e91e63; /* Rose vif pour le titre principal */
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 50px;
 }
 
-.story-section p {
-  max-width: 600px;
-  margin: 0 auto;
-  color: #555;
-  line-height: 1.6;
+.story-part {
+    margin-bottom: 40px;
 }
 
+.story-part h3 {
+    color: #ff7f56; /* Couleur orange/saumon pour les sous-titres */
+    font-size: 1.6rem;
+    font-weight: 600;
+    border-left: 5px solid #e91e63;
+    padding-left: 15px;
+    margin-bottom: 20px;
+}
+
+.story-content p {
+    color: #5a4638; /* Couleur sombre mais douce pour le texte de lecture */
+    line-height: 1.7;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+/* Style pour la ligne de séparation */
+.story-section hr {
+    border: none;
+    border-top: 2px dashed #ff7f5650; /* Ligne tiretée rose clair */
+    margin: 40px 0;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Styles des listes (pour les objectifs et l'impact) */
+.story-content ul {
+    list-style: none; /* Supprime les puces par défaut */
+    padding-left: 0;
+    margin-top: 15px;
+}
+
+.story-content ul li {
+    background: #fdf3f7; /* Léger fond rose pour les éléments de liste */
+    margin-bottom: 10px;
+    padding: 12px 20px;
+    border-left: 4px solid #e91e63; /* Barre rose sur la gauche */
+    border-radius: 5px;
+    color: #5a4638;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+.story-content ul li strong {
+    color: #e91e63; /* Couleur de la mise en évidence des mots clés */
+}
 .contact-section {
   background: linear-gradient(90deg, #e91e63, #ff7f56);
   color: white;

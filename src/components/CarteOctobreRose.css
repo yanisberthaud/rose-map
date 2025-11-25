@@ -1,92 +1,105 @@
-/* --- NOUVEAUX STYLES POUR LE BOUTON --- */
+/* --- Styles de la Page CarteOctobreRose --- */
 
-/* Conteneur pour positionner le bouton au centre de la page (avant le contenu) */
-.carte-toggle-container {
-  padding: 20px 40px; /* Espace pour le bouton */
-  text-align: center; /* Centrer le bouton */
-}
-
-/* Style du bouton d'activation/désactivation de la carte */
-.carte-toggle-button {
-  /* Dimensions pour le rendre carré et visible */
-  width: 150px; 
-  height: 150px; 
-  /* Style visuel */
-  background: #ff7f56; /* Couleur similaire à votre bordure */
-  color: white;
-  border: none;
-  border-radius: 15px; /* Coins légèrement arrondis */
-  cursor: pointer;
-  font-size: 1.2rem;
-  font-weight: bold;
-  /* Mise en page interne (pour le texte et l'icône) */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-  /* Ombre pour effet de relief */
-  box-shadow: 0 4px 15px rgba(233, 30, 99, 0.4); /* Ombre rose */
-  /* Centrage final */
-  margin: 0 auto;
-  /* Transition pour le survol */
-  transition: transform 0.2s, background-color 0.2s;
-  /* Assurer que le bouton est au-dessus du footer */
-  z-index: 10; 
-}
-
-.carte-toggle-button:hover {
-  background: #e91e63; /* Rose à l'arrière-plan */
-  transform: translateY(-2px); /* Léger soulèvement au survol */
-}
-
-/* Style pour le texte à l'intérieur du bouton */
-.button-text {
-    display: block;
-    margin-top: 10px;
-    font-size: 0.9rem;
-}
-
-/* --- STYLES EXISTANTS (pour référence et complétude) --- */
-
+/* Conteneur principal de la page */
 .carte-section {
-  padding: 60px 40px;
-  background: #e91e63;
+    /* Retrait du padding top (il était de 60px) pour permettre au header d'être en haut */
+    padding: 0 0 60px 0; 
+    background: #e91e63; /* Votre couleur de fond rose */
 }
 
+/* 🛑 NOUVEAU : Header de la Page Carte (Contient le bouton et le logo) */
+.carte-header {
+    display: flex;
+    justify-content: space-between; /* Place les éléments (bouton, logo, placeholder) aux extrémités */
+    align-items: center;
+    padding: 15px 40px; 
+    background: #ffffff; 
+    border-bottom: 2px solid #ff7f56; 
+    margin-bottom: 40px; /* Espace avant le contenu principal de la carte */
+}
+
+/* Style du Logo dans le Header */
+.carte-header .logo img {
+    max-height: 50px; 
+    display: block;
+}
+
+/* Placeholder pour centrer visuellement le logo (même largeur que le bouton) */
+.carte-header .header-placeholder {
+    width: 150px; /* Largeur du bouton de retour */
+}
+
+/* 🛑 NOUVEAU : Styles du Bouton de Retour */
+.back-to-home-button {
+    width: 200px; 
+    background: #e91e63; /* Rose */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.2s, transform 0.2s;
+    white-space: nowrap; 
+}
+
+.back-to-home-button:hover {
+    background: #d81b60; /* Rose plus foncé au survol */
+    transform: translateY(-1px);
+}
+
+/* --- Styles pour la Carte et le Texte --- */
 
 .carte-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
-  justify-content: center;
-  align-items: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 40px;
+    justify-content: center;
+    align-items: flex-start;
 }
 
+/* 🛑 MODIFIÉ : Assurer la même taille pour la carte (50/50) */
 .carte-map {
-  flex: 1 1 500px;
-  max-width: 600px;
-  border: #ff7f56 10px solid;
-  border-radius: 20px;
+    flex: 1 1 45%; /* Donne une base de 45% */
+    max-width: 50%; /* Limite à la moitié de l'espace sur grands écrans */
+    border: #ff7f56 10px solid;
+    border-radius: 20px;
 }
 
+/* IMPORTANT : Assurez-vous que l'élément Leaflet (MapContainer) a une hauteur définie */
+.leaflet-container {
+    height: 600px; /* Doit correspondre à la hauteur souhaitée */
+    width: 100%;
+    border-radius: 12px;
+}
+
+/* 🛑 MODIFIÉ : Assurer la même taille pour la zone de texte (50/50) */
 .carte-text {
-  flex: 1 1 300px;
-  max-width: 500px;
-  background: #ffffff;
-  border: 10px solid #ff7f56;
-  padding: 35px;
-  border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    flex: 1 1 45%; /* Donne une base de 45% */
+    max-width: 50%; /* Limite à la moitié de l'espace sur grands écrans */
+    background: #ffffff;
+    border: 10px solid #ff7f56;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 .carte-text h2 {
-  color: #e91e63;
-  margin-bottom: 20px;
+    color: #e91e63;
+    margin-bottom: 20px;
 }
 
 .carte-text p {
-  color: #5a4638;
-  line-height: 1.6;
-  margin-bottom: 15px;
+    color: #5a4638;
+    line-height: 1.6;
+    margin-bottom: 15px;
 }
+
+/* --- STYLES OBSOLÈTES (Supprimés de la version finale) --- */
+/*
+.carte-toggle-container { ... }
+.carte-toggle-button { ... }
+.button-text { ... }
+*/

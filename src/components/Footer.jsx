@@ -190,17 +190,66 @@ export default function Footer() {
       </section>
 
       {/* SECTION HISTOIRE */}
-      <section className="story-section">
-        <h2>Histoire d'Octobre Rose</h2>
-        <p>
-          Depuis plus de 30 ans, Octobre Rose sensibilise à la lutte contre le
-          cancer du sein. Des événements sont organisés partout en France pour
-          encourager le dépistage précoce et soutenir la recherche.
-        </p>
-        <p>
-            Tout a commencé en 1985 aux États-Unis, lorsque l'American Cancer Society et la société pharmaceutique Imperial Chemical Industries ont lancé une campagne pour promouvoir la mammographie. Depuis, le symbole du ruban rose, adopté en 1991, est devenu universel. Ce mouvement a permis non seulement de collecter des fonds essentiels, mais aussi de **briser le silence** et de faire progresser significativement les traitements. Le combat ne fait que commencer, mais l'histoire d'Octobre Rose est celle d'une solidarité mondiale en action.
-        </p>
-      </section>
+     <section className="story-section">
+    <h2>💖 Histoire Complète d'Octobre Rose</h2>
+    
+    <div className="story-content">
+        
+        {/* --- I. Les Origines et la Naissance du Mouvement --- */}
+        <section className="story-part">
+            <h3>I. 🚀 Les Origines et la Naissance du Mouvement</h3>
+            <p>
+                L'initiative **Octobre Rose** (Breast Cancer Awareness Month - BCAM) est née aux **États-Unis** en **octobre 1985**.
+            </p>
+            <p>
+                Initialement, cette campagne fut lancée par l'**American Cancer Society** en partenariat avec l'entreprise pharmaceutique Imperial Chemical Industries (aujourd'hui AstraZeneca). L'objectif premier était de **promouvoir la mammographie** comme outil de dépistage précoce essentiel pour la détection du cancer du sein.
+            </p>
+            <p>
+                Le mouvement a pris son essor grâce à un symbole devenu universel : le **ruban rose**. Si le premier ruban (pêche) est apparu en 1990 pour le cancer du côlon, c'est en **1991** que la fondation Susan G. Komen for the Cure a distribué des **rubans roses** aux participantes de sa course à New York, ancrant définitivement cette couleur comme emblème de la lutte contre le cancer du sein.
+            </p>
+        </section>
+        
+        <hr/>
+
+        {/* --- II. Le Mouvement en France et l'Association --- */}
+        <section className="story-part">
+            <h3>II. 🇫🇷 Le Mouvement en France et l'Association "Le Cancer du Sein, Parlons-en !"</h3>
+            <p>
+                En France, le mouvement a été officiellement initié en **1994** par le groupe Estée Lauder Companies France et le magazine <em>Marie Claire</em> en créant l'association **"Le Cancer du Sein, Parlons-en !"** (renommée plus tard <em>Breast Cancer Awareness</em>).
+            </p>
+            <p>
+                Chaque année, durant tout le mois d'octobre, des **événements de sensibilisation et de collecte de fonds** sont organisés partout dans le pays. Ces actions, allant des courses solidaires aux **illuminations de monuments emblématiques**, visent à :
+            </p>
+            <ul>
+                <li>**Encourager le dépistage précoce :** Rappeler aux femmes (particulièrement celles âgées de 50 à 74 ans) l'importance d'une surveillance régulière.</li>
+                <li>**Briser le tabou et le silence :** Offrir un espace de dialogue et de soutien aux patientes et à leurs proches.</li>
+                <li>**Financer la recherche :** Collecter des fonds essentiels pour faire progresser les traitements et améliorer la qualité de vie des personnes atteintes.</li>
+            </ul>
+        </section>
+        
+        <hr/>
+
+        {/* --- III. L'Impact et l'Héritage --- */}
+        <section className="story-part">
+            <h3>III. ✨ L'Impact et l'Héritage d'une Solidarité Mondiale</h3>
+            <p>
+                Depuis plus de **30 ans**, le mouvement Octobre Rose est devenu bien plus qu'une simple campagne de sensibilisation. Il est le symbole d'une **solidarité mondiale** en action, démontrant que l'union fait la force face à la maladie.
+            </p>
+            <p>
+                L'impact est mesurable :
+            </p>
+            <ul>
+                <li>**Hausse du dépistage :** Les campagnes ont significativement augmenté la participation aux mammographies, permettant de diagnostiquer la maladie à un stade précoce, où le taux de guérison est le plus élevé.</li>
+                <li>**Progression des traitements :** Les fonds collectés ont soutenu des innovations majeures, menant à des traitements moins invasifs et plus efficaces.</li>
+                <li>**Évolution des mentalités :** Le combat a été sorti de la sphère privée pour devenir une conversation publique et collective, réduisant l'isolement des personnes touchées.</li>
+            </ul>
+            <p>
+                Le combat contre le cancer du sein est continu, mais l'histoire d'Octobre Rose est celle d'une **victoire de la mobilisation et de l'espoir**, nous rappelant que chaque geste de soutien et chaque discussion compte.
+            </p>
+        </section>
+
+    </div>
+</section>
 
       {/* SECTION CONTACT */}
       <section className="contact-section" ref={contactSectionRef}>
