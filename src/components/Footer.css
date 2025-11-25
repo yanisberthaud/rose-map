@@ -702,3 +702,46 @@
         min-width: unset;
     }
 }
+
+/* ==================================== */
+/* NOUVELLE SECTION DÉDIÉE AU DON */
+/* ==================================== */
+.donation-cta-section {
+  background-color: #fce4ec; /* Rose très clair */
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.donation-cta-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cta-text {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 30px;
+  font-weight: 500;
+}
+
+.btn-donate-large {
+  max-width: 450px; 
+  width: 100%;
+  display: inline-block; /* Pour pouvoir appliquer max-width et center l'élément */
+  background: #e91e63; /* Rose vif */
+  color: white;
+  text-decoration: none;
+  padding: 20px 40px;
+  border-radius: 40px;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(233, 30, 99, 0.4); /* Ombre pour le relief */
+}
+
+.btn-donate-large:hover {
+  background: #d91a5c; /* Rose plus foncé au survol */
+  transform: translateY(-3px); /* Effet de soulèvement */
+  box-shadow: 0 12px 25px rgba(233, 30, 99, 0.5);
+}

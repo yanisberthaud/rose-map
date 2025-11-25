@@ -1,5 +1,5 @@
 import { MapContainer, TileLayer, useMap } from 'react-leaflet'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react' // 👈 Importer useState
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import 'leaflet.markercluster/dist/MarkerCluster.css'
@@ -33,6 +33,9 @@ function MarkerCluster({ lieux, icon }) {
 }
 
 export default function CarteOctobreRose() {
+  // 🌸 Ajouter l'état pour gérer l'affichage de la carte
+  const [isMapVisible, setIsMapVisible] = useState(false) 
+
   const lieux = [
     // 🌸 MÉTROPOLE - FLANDRES
     { nom: "CHU de Lille", description: "Stands, marche et soirée (1–14 oct)", coords: [50.62925, 3.057256] },
@@ -60,45 +63,66 @@ export default function CarteOctobreRose() {
     { nom: "CH Compiègne-Noyon", description: "Journées info 9 et 23 oct + collecte", coords: [49.417, 2.826] },
   ]
 
+  // Fonction pour basculer l'état
+  const toggleMapVisibility = () => {
+    setIsMapVisible(!isMapVisible)
+  }
+
   return (
-    <div className="carte-section">
-      <div className="carte-wrapper">
-        <div className="carte-map">
-          <MapContainer
-            center={[50.3, 2.8]}
-            zoom={8}
-            style={{ height: '600px', width: '100%', borderRadius: '12px' }}
-          >
-            <TileLayer
-              attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>'
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            />
-            <MarkerCluster lieux={lieux} icon={roseIcon} />
-          </MapContainer>
-        </div>
-        <div className="carte-text">
-          <h2>Découvrez les actions Octobre Rose</h2>
-          <p>
-           Cette carte interactive innovante est votre passeport pour explorer et vous connecter à l'effervescence de 
-           la campagne Octobre Rose. Elle vous offre une visualisation complète et dynamique de tous les événements, 
-           stands de sensibilisation, ateliers informatifs et actions de soutien essentiels organisés près de chez vous. 
-           Notre objectif est de rendre l'information accessible et de faciliter votre participation à cette cause vitale.
-           <br/>
-           <br/>
+    // 🎀 Conteneur du bouton d'accès à la carte
+    <div className="carte-toggle-container"> 
+      <button 
+        className="carte-toggle-button" 
+        onClick={toggleMapVisibility}
+        // Utiliser une icône ou un texte adapté selon l'état
+      >
+        {isMapVisible ? '✕' : '📍'} 
+        <span className="button-text">
+            {isMapVisible ? 'Fermer la Carte' : 'Carte Interactive'}
+        </span>
+      </button>
 
-            Chaque marqueur positionné avec soin sur la carte représente un lieu clé où Octobre Rose agit concrètement. 
-            En un simple clic, accédez instantanément à des informations détaillées sur chaque initiative : les dates et 
-            heures précises, les adresses exactes, une description succincte de l'activité, et les contacts utiles pour vous 
-            inscrire ou obtenir des précisions.
-            <br/>
-            <br/>
-
-            En explorant cette carte, vous ne faites pas que trouver un événement ; vous contribuez à un mouvement collectif 
-            essentiel, renforçant la portée de chaque action pour un avenir sans cancer du sein.
-            <br/>
-          </p>
+      {/* 🎀 Afficher le contenu de la carte si isMapVisible est vrai */}
+      {isMapVisible && (
+        <div className="carte-section">
+          <div className="carte-wrapper">
+            <div className="carte-map">
+              <MapContainer
+                center={[50.3, 2.8]}
+                zoom={8}
+                style={{ height: '600px', width: '100%', borderRadius: '12px' }}
+                key={isMapVisible} // Clé pour forcer le re-rendu et corriger les problèmes d'affichage de Leaflet
+              >
+                <TileLayer
+                  attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>'
+                  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                />
+                <MarkerCluster lieux={lieux} icon={roseIcon} />
+              </MapContainer>
+            </div>
+            <div className="carte-text">
+              <h2>Découvrez les actions Octobre Rose</h2>
+              <p>
+                Cette carte interactive innovante est votre passeport pour explorer et vous connecter à l'effervescence de 
+                la campagne Octobre Rose. Elle vous offre une visualisation complète et dynamique de tous les événements, 
+                stands de sensibilisation, ateliers informatifs et actions de soutien essentiels organisés près de chez vous. 
+                Notre objectif est de rendre l'information accessible et de faciliter votre participation à cette cause vitale.
+                <br/>
+                <br/>
+                Chaque marqueur positionné avec soin sur la carte représente un lieu clé où Octobre Rose agit concrètement. 
+                En un simple clic, accédez instantanément à des informations détaillées sur chaque initiative : les dates et 
+                heures précises, les adresses exactes, une description succincte de l'activité, et les contacts utiles pour vous 
+                inscrire ou obtenir des précisions.
+                <br/>
+                <br/>
+                En explorant cette carte, vous ne faites que trouver un événement ; vous contribuez à un mouvement collectif 
+                essentiel, renforçant la portée de chaque action pour un avenir sans cancer du sein.
+                <br/>
+              </p>
+            </div>
+          </div>
         </div>
-      </div>
+      )}
     </div>
   )
 }

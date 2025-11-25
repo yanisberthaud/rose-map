@@ -1,3 +1,54 @@
+/* --- NOUVEAUX STYLES POUR LE BOUTON --- */
+
+/* Conteneur pour positionner le bouton au centre de la page (avant le contenu) */
+.carte-toggle-container {
+  padding: 20px 40px; /* Espace pour le bouton */
+  text-align: center; /* Centrer le bouton */
+}
+
+/* Style du bouton d'activation/désactivation de la carte */
+.carte-toggle-button {
+  /* Dimensions pour le rendre carré et visible */
+  width: 150px; 
+  height: 150px; 
+  /* Style visuel */
+  background: #ff7f56; /* Couleur similaire à votre bordure */
+  color: white;
+  border: none;
+  border-radius: 15px; /* Coins légèrement arrondis */
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: bold;
+  /* Mise en page interne (pour le texte et l'icône) */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  /* Ombre pour effet de relief */
+  box-shadow: 0 4px 15px rgba(233, 30, 99, 0.4); /* Ombre rose */
+  /* Centrage final */
+  margin: 0 auto;
+  /* Transition pour le survol */
+  transition: transform 0.2s, background-color 0.2s;
+  /* Assurer que le bouton est au-dessus du footer */
+  z-index: 10; 
+}
+
+.carte-toggle-button:hover {
+  background: #e91e63; /* Rose à l'arrière-plan */
+  transform: translateY(-2px); /* Léger soulèvement au survol */
+}
+
+/* Style pour le texte à l'intérieur du bouton */
+.button-text {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+/* --- STYLES EXISTANTS (pour référence et complétude) --- */
+
 .carte-section {
   padding: 60px 40px;
   background: #e91e63;
@@ -35,7 +86,7 @@
 }
 
 .carte-text p {
-  color: #5a4638; /* texte lisible sur fond blanc */
+  color: #5a4638;
   line-height: 1.6;
   margin-bottom: 15px;
 }
