@@ -79,21 +79,21 @@ export default function CarteOctobreRose() {
         <div className="carte-text">
           <h2>Découvrez les actions Octobre Rose</h2>
           <p>
-           Cette carte interactive innovante est votre passeport pour explorer et vous connecter à l'effervescence de
-           la campagne Octobre Rose. Elle vous offre une visualisation complète et dynamique de tous les événements,
-           stands de sensibilisation, ateliers informatifs et actions de soutien essentiels organisés près de chez vous.
+           Cette carte interactive innovante est votre passeport pour explorer et vous connecter à l'effervescence de 
+           la campagne Octobre Rose. Elle vous offre une visualisation complète et dynamique de tous les événements, 
+           stands de sensibilisation, ateliers informatifs et actions de soutien essentiels organisés près de chez vous. 
            Notre objectif est de rendre l'information accessible et de faciliter votre participation à cette cause vitale.
            <br/>
            <br/>
- 
-            Chaque marqueur positionné avec soin sur la carte représente un lieu clé où Octobre Rose agit concrètement.
-            En un simple clic, accédez instantanément à des informations détaillées sur chaque initiative : les dates et
-            heures précises, les adresses exactes, une description succincte de l'activité, et les contacts utiles pour vous
+
+            Chaque marqueur positionné avec soin sur la carte représente un lieu clé où Octobre Rose agit concrètement. 
+            En un simple clic, accédez instantanément à des informations détaillées sur chaque initiative : les dates et 
+            heures précises, les adresses exactes, une description succincte de l'activité, et les contacts utiles pour vous 
             inscrire ou obtenir des précisions.
             <br/>
             <br/>
- 
-            En explorant cette carte, vous ne faites pas que trouver un événement ; vous contribuez à un mouvement collectif
+
+            En explorant cette carte, vous ne faites pas que trouver un événement ; vous contribuez à un mouvement collectif 
             essentiel, renforçant la portée de chaque action pour un avenir sans cancer du sein.
             <br/>
           </p>

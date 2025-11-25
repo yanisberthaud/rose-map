@@ -1,0 +1,355 @@
+:root {
+    --color-primary-pink: #D10A61; /* Pink vif pour les boutons et accents */
+    --color-dark-pink: #A0074F; /* Fond foncé du Hero */
+    --color-light-pink: #F8B3C9; /* Nuance de rose clair */
+    --color-text-dark: #333333;
+    --color-text-light: #ffffff;
+    --color-background: #f8f8f8;
+    --color-gradient-start: #D10A61;
+    --color-gradient-end: #E44D87;
+    --border-radius: 12px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: var(--color-background);
+    color: var(--color-text-dark);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* -------------------------------------- */
+/* Header / Navigation */
+/* -------------------------------------- */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content : center;
+    padding: 0px;
+    background-color: var(--color-text-light);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+}
+
+.header .logo img { /* Exemple si tu as un img à l'intérieur de .logo */
+    height: 40px; /* Définit la hauteur de l'image */
+    width: auto; /* Maintient le ratio d'aspect */
+}
+
+.btn-donate {
+    background-color: var(--color-primary-pink);
+    color: var(--color-text-light);
+    padding: 8px 20px;
+    border: none;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-donate:hover {
+    background-color: #A0074F;
+}
+
+/* -------------------------------------- */
+/* Hero Section */
+/* -------------------------------------- */
+.hero-section {
+    padding: 40px 0 60px;
+    background: linear-gradient(135deg, var(--color-dark-pink) 0%, var(--color-gradient-end) 100%);
+    margin-bottom: 50px;
+}
+
+/* Conteneur Flex pour aligner le texte au centre verticalement */
+.hero-content {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    /* Ajoutez ceci pour aligner le contenu verticalement (si nécessaire) */
+    align-items: center; 
+}
+
+.hero-text {
+    flex: 1;
+    max-width: 50%;
+    padding-right: 40px;
+    z-index: 2;
+    
+    /* ------------------------------------------------ */
+    /* NOUVELLES LIGNES POUR CENTRAGE (Horizontal & Vertical) */
+    /* ------------------------------------------------ */
+    
+    /* Active Flexbox pour gérer le contenu interne */
+    display: flex;
+    /* Aligne tous les éléments enfants (p, h1, div) sur un axe vertical */
+    flex-direction: column;
+    /* Centre le contenu verticalement dans l'espace disponible */
+    justify-content: center;
+    /* Définit une hauteur minimale pour que le centrage vertical fonctionne */
+    /* Vous devez donner une hauteur à ce conteneur pour centrer dedans */
+    min-height: 350px; /* Ajustez cette valeur pour correspondre à l'image */
+
+    /* Si vous voulez centrer le TEXTE lui-même (mots), et non les blocs : */
+    text-align: center; /* NE PAS UTILISER si les boutons doivent rester à gauche */
+    /* Si vous utilisez text-align: center;, les boutons (qui sont des blocs) ne seront pas centrés */
+}
+
+.hero-text h1 {
+    font-size: 40px;
+    line-height: 1;
+    margin-bottom: 10px;
+    font-weight: 900;
+    color : white;
+}
+
+.hero-text {
+    flex: 1;
+    max-width: 50%;
+    z-index: 2;
+    
+    /* Centrage Vertical */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 350px; 
+
+    /* Centrage Horizontal du Texte */
+    text-align: center; 
+    
+    /* Centrage Horizontal des Blocs Enfants (Boutons, Paragraphes) */
+    align-items: center; 
+}
+
+.hero-buttons {
+    display: flex; 
+    gap: 15px;
+    margin-top: 10px; /* L'espacement est géré par la marge du paragraphe ci-dessus */
+    justify-content: center; 
+}
+
+.hero-buttons .btn {
+    background-color: var(--color-text-light);
+    color: var(--color-primary-pink);
+    padding: 10px 20px;
+    border: 2px solid var(--color-text-light);
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 15px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.hero-buttons .btn-secondary {
+    background-color: transparent;
+    color: var(--color-text-light);
+    border: 2px solid var(--color-text-light);
+}
+
+.hero-text p:nth-child(3) {
+    /* Donne une largeur maximale pour qu'il ne soit pas trop étiré, 
+       mais suffisamment large pour s'aligner au titre */
+    max-width: 85%; 
+    /* Assure que ce bloc est bien centré horizontalement dans le conteneur Flex */
+    align-self: center; 
+}
+
+
+
+.hero-buttons .btn:hover {
+    background-color: var(--color-light-pink);
+    color: var(--color-dark-pink);
+}
+
+.hero-image-container {
+    position: relative;
+    width: 450px;
+    height: 380px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    background-image: url('https://via.placeholder.com/450x380/E44D87/ffffff?text=Image+Course+Octobre+Rose');
+    background-size: cover;
+    background-position: center;
+}
+
+.impact-box {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: var(--color-text-light);
+    padding: 15px 20px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+}
+
+.impact-box .icon {
+    background-color: var(--color-primary-pink);
+    color: var(--color-text-light);
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.impact-box .text strong {
+    display: block;
+    color: var(--color-text-dark);
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.impact-box .text span {
+    font-size: 14px;
+    color: #666;
+}
+
+/* -------------------------------------- */
+/* Stats Section */
+/* -------------------------------------- */
+.stats-section {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    text-align: center;
+    padding: 30px 0 80px;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-item .icon {
+    color: var(--color-primary-pink);
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.stat-item strong {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--color-dark-pink);
+    margin-bottom: 5px;
+}
+
+.stat-item span {
+    font-size: 14px;
+    color: #666;
+}
+
+/* -------------------------------------- */
+/* Events Section */
+/* -------------------------------------- */
+.events-section {
+    padding-bottom: 80px;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-header h2 {
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--color-text-dark);
+    margin-bottom: 5px;
+}
+
+.section-header p {
+    font-style: italic;
+    font-size: 14px;
+    color: #999;
+}
+
+.event-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.event-card {
+    background-color: var(--color-text-light);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.event-card-image {
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+}
+
+.event-card-content {
+    padding: 20px;
+}
+
+.event-card-content h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--color-dark-pink);
+    margin-bottom: 5px;
+}
+
+.event-card-content .location {
+    font-size: 12px;
+    color: var(--color-primary-pink);
+    display: block;
+    margin-bottom: 10px;
+}
+
+.event-card-content p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.btn-register {
+    display: block;
+    background: linear-gradient(90deg, #F04F7B 0%, #D10A61 100%);
+    color: var(--color-text-light);
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    transition: opacity 0.3s;
+}
+
+.btn-register:hover {
+    opacity: 0.9;
+}
