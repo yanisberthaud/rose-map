@@ -80,7 +80,7 @@ export default function nav() {
                             <h3>Course de la citadelle</h3>
                             <span className="location">Lille, Citadelle</span>
                             <p> Rejoignez-nous, et venez courir pour soutenir le lutte contre le cancer du sein ! </p>
-                            <a href="#" className="btn-register"> Rejoindre maintenant ! </a>
+                            <a href="https://challengedurubanrose.fr/lille/" className="btn-register"> Rejoindre maintenant ! </a>
                         </div>
                     </div>
                     
@@ -94,7 +94,7 @@ export default function nav() {
                             <h3>Yoga</h3>
                             <span className="location">Orchies</span>
                             <p> Venez vous détendre et assistez au cours de Yoga à profit d'Octobre Rose. </p>
-                            <a href="#" className="btn-register"> Rejoindre maintenant ! </a>
+                            <a href="https://www.celinerichou-yoga.fr/cours-yoga-orchies" className="btn-register"> Rejoindre maintenant ! </a>
                         </div>
                     </div>
                     
@@ -102,13 +102,13 @@ export default function nav() {
                     <div className="event-card">
                         <div 
                             className="event-card-image" 
-                            style={{ backgroundImage: "url('photo_cyclisme.png')" }}
+                            style={{ backgroundImage: "url('photo_landasienne.jpg')" }}
                         ></div>
                         <div className="event-card-content">
-                            <h3>Course cycliste</h3>
-                            <span className="location">Arras</span>
-                            <p> Rendez-vous à Arras pour la grande course annuelle d'Octobre Rose. </p>
-                            <a href="#" className="btn-register"> Rejoindre maintenant ! </a>
+                            <h3> La Landasienne </h3>
+                            <span className="location"> Landas </span>
+                            <p> Rendez-vous à Landas pour une Landasienne aussi culte que les années précédentes ! </p>
+                            <a href="https://www.la-landasienne.com/" className="btn-register"> Rejoindre maintenant ! </a>
                         </div>
                     </div>
                 </div>
