@@ -704,7 +704,7 @@
 }
 
 /* ==================================== */
-/* NOUVELLE SECTION DÉDIÉE AU DON */
+/* SECTION DÉDIÉE AU DON */
 /* ==================================== */
 .donation-cta-section {
   background-color: #fce4ec; /* Rose très clair */
@@ -727,7 +727,7 @@
 .btn-donate-large {
   max-width: 450px; 
   width: 100%;
-  display: inline-block; /* Pour pouvoir appliquer max-width et center l'élément */
+  display: inline-block; 
   background: #e91e63; /* Rose vif */
   color: white;
   text-decoration: none;
@@ -737,11 +737,42 @@
   font-weight: 800;
   letter-spacing: 1px;
   transition: all 0.3s ease;
-  box-shadow: 0 8px 20px rgba(233, 30, 99, 0.4); /* Ombre pour le relief */
+  box-shadow: 0 8px 20px rgba(233, 30, 99, 0.4); 
 }
 
 .btn-donate-large:hover {
   background: #d91a5c; /* Rose plus foncé au survol */
-  transform: translateY(-3px); /* Effet de soulèvement */
+  transform: translateY(-3px); 
   box-shadow: 0 12px 25px rgba(233, 30, 99, 0.5);
+}
+
+/* ==================================== */
+/* NOUVELLE SECTION: BOUTON CARTE OCTOBRE ROSE */
+/* ==================================== */
+.map-cta-section {
+    background-color: #f7f7f7; /* Gris très clair pour la séparation */
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.btn-map-large {
+    max-width: 450px; 
+    width: 100%;
+    display: inline-block; 
+    background: #0047a9; /* Bleu foncé pour contraster avec le rose */
+    color: white;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 40px;
+    font-size: 1.3rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 71, 169, 0.4); 
+}
+
+.btn-map-large:hover {
+    background: #003a8a; /* Bleu plus foncé au survol */
+    transform: translateY(-2px); 
+    box-shadow: 0 8px 20px rgba(0, 71, 169, 0.5);
 }

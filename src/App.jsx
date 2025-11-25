@@ -1,4 +1,3 @@
-// App.jsx
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 
@@ -7,6 +6,8 @@ import Footer from './components/Footer';
 import DonPage from './components/DonPage';
 import CarteOctobreRose from './components/CarteOctobreRose';
 
+// 🛑 MODIFICATION CLÉ 1 : Home rend maintenant uniquement le contenu de la page d'accueil.
+// Le Nav et le Footer sont gérés dans AppContent pour être masqués sur la page carte.
 function Home() {
     return (
         <>
@@ -17,76 +18,47 @@ function Home() {
 function AppContent() {
     const location = useLocation();
     
-    // 🌸 NOUVEL ÉTAT : Gérer l'affichage de la carte
-    const [isMapVisible, setIsMapVisible] = useState(false); 
+    // 🛑 MODIFICATION CLÉ 2 : Suppression de l'état local isMapVisible et de la fonction toggleMapVisibility.
+    // La navigation vers la carte est maintenant gérée uniquement par React Router.
 
-    // Logique pour le bouton d'ouverture/fermeture de la carte
-    const toggleMapVisibility = () => {
-        // On ne permet l'ouverture que sur la page d'accueil (si nécessaire)
-        // Si vous voulez la carte partout, vous pouvez ignorer la vérification de pathname.
-        if (location.pathname === '/') {
-            setIsMapVisible(!isMapVisible);
-        } else {
-            // Optionnel : si on clique hors de la home, on navigue d'abord vers la home
-            // (Nécessiterait 'useNavigate' ou un lien dans le bouton)
-            setIsMapVisible(!isMapVisible); // On l'ouvre quand même pour l'exemple
-        }
-    };
-
-    // Détecte si l'URL est /don
+    // Détecte si l'URL est /don pour le modal
     const isDonationModalOpen = location.pathname === '/don'; 
+    
+    // Détecte si nous sommes sur la page carte pour conditionner l'affichage du Nav/Footer
+    const isMapPage = location.pathname === '/carte-octobre-rose';
     
     return (
         <>
-            {/* 💡 Nav et Footer sont ici pour être visibles sur toutes les routes. 
-               Pensez à adapter votre composant 'Home' en conséquence (retirer l'appel à Nav/Footer) */}
-            <Nav /> 
+            {/* On affiche la navigation partout sauf sur la page carte si elle doit être plein écran */}
+            {!isMapPage && <Nav />} 
 
             <main>
                 <Routes>
-                    {/* La route d'accueil charge le contenu de la page d'accueil */}
                     <Route path="/" element={<Home />} />
-                    
-                    {/* Autres routes non modales */}
                     <Route path="/histoire" element={<div>Page Histoire détaillée...</div>} />
                     <Route path="/evenements" element={<div>Page Événements...</div>} />
                     <Route path="/contact" element={<div>Page Contact...</div>} />
                     <Route path="/don" element={null} /> 
+                    
+                    {/* 🗺️ ROUTE DE LA CARTE 🗺️ */}
+                    <Route 
+                        path="/carte-octobre-rose" 
+                        // On passe isVisible={true} et isPage={true} pour forcer l'affichage 
+                        // de la carte en mode page dans le composant CarteOctobreRose.
+                        element={<CarteOctobreRose isVisible={true} isPage={true} />} 
+                    />
                 </Routes>
             </main>
-
-            {/* ======================================================= */}
-            {/* 📍 BOUTON D'ACCÈS FIXE / GLOBAL 📍 */}
-            {/* Le bouton est placé ici pour être visible sur toutes les routes, 
-               grâce à sa position fixe définie dans le CSS. */}
-            <button 
-                className="carte-toggle-button" // Utilisez le CSS que je vous ai donné précédemment
-                onClick={toggleMapVisibility}
-            >
-                {/* Icône et texte du bouton */}
-                <img src="/icon.png" alt="Carte Octobre Rose" className="button-icon" /> 
-                <span className="button-text">
-                    {isMapVisible ? 'Fermer' : 'Carte Événements'}
-                </span>
-            </button>
-            {/* ======================================================= */}
-
-
-            <Footer /> {/* Le Footer est aussi ici pour être global */}
-
-
-            {/* 🛑 AFFICHAGE CONDITIONNEL DES OVERLAYS (Cartes et Modales) 🛑 */}
             
-            {/* 1. Modale de Don (via l'URL) */}
+            {/* 🛑 Suppression du bouton flottant pour la carte (il utilisait l'état isMapVisible) 🛑 */}
+            
+            {/* On affiche le Footer partout sauf sur la page carte */}
+            {!isMapPage && <Footer />} 
+            
             {isDonationModalOpen && <DonPage />} 
 
-            {/* 2. Carte Interactive (via l'état local) */}
-            {isMapVisible && (
-                <div className="global-map-overlay">
-                    {/* On passe isVisible pour forcer le re-rendu de Leaflet via la prop 'key' */}
-                    <CarteOctobreRose isVisible={isMapVisible} />
-                </div>
-            )}
+            {/* 🛑 Suppression de l'overlay de carte d'origine 🛑 */}
+
         </>
     );
 }

@@ -2,7 +2,6 @@
 import React, { useState, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom"; 
 import "./Footer.css";
-// NOTE: Remplacez par le chemin correct vers votre logo.
 import logo from "/LOGO.png"; 
 
 
@@ -68,12 +67,10 @@ export default function Footer() {
   
   const navigate = useNavigate(); 
 
-  // Fonction pour naviguer vers la page Don
   const navigateToDonPage = () => {
     navigate("/don");
   };
   
-  // Fonction pour gérer le clic sur une carte vidéo
   const handleVideoCardClick = (youtubeId) => {
     setPlayingVideoId(youtubeId);
   };
@@ -81,7 +78,11 @@ export default function Footer() {
   return (
     <div className="page-sections-container">
 
-      {/* SECTION TÉMOIGNAGES */}
+      <div className="map-cta-section">
+        <Link to="/carte-octobre-rose" className="btn-map-large">
+          <span role="img" aria-label="carte">📍</span> CONSULTER LA CARTE DES ÉVÉNEMENTS
+        </Link>
+      </div>
       <section className="temoignages-section-container">
         <h2 className="temoignages-title">
           PROTÉGEZ TOUTES LES FEMMES QUE VOUS AIMEZ
@@ -199,16 +200,6 @@ export default function Footer() {
         <p>
             Tout a commencé en 1985 aux États-Unis, lorsque l'American Cancer Society et la société pharmaceutique Imperial Chemical Industries ont lancé une campagne pour promouvoir la mammographie. Depuis, le symbole du ruban rose, adopté en 1991, est devenu universel. Ce mouvement a permis non seulement de collecter des fonds essentiels, mais aussi de **briser le silence** et de faire progresser significativement les traitements. Le combat ne fait que commencer, mais l'histoire d'Octobre Rose est celle d'une solidarité mondiale en action.
         </p>
-        <div className="story-cta">
-            {/* Lien vers page histoire détaillée */}
-            <Link to="/histoire" className="btn-story">
-              En savoir plus sur l'histoire complète
-            </Link>
-            {/* Lien vers la carte */}
-            <Link to="/carte-octobre-rose" className="btn-story map-link">
-              Voir la Carte des Événements
-            </Link>
-        </div>
       </section>
 
       {/* SECTION CONTACT */}
@@ -249,7 +240,6 @@ export default function Footer() {
         )}
       </section>
 
-      {/* NOUVELLE SECTION DÉDIÉE AU DON (Centré et large) */}
       <section className="donation-cta-section">
         <div className="donation-cta-content">
           <p className="cta-text">Chaque geste compte. Votre soutien est vital pour la recherche.</p>
@@ -259,7 +249,6 @@ export default function Footer() {
         </div>
       </section>
 
-      {/* PIED DE PAGE (FOOTER) */}
       <footer className="footer">
         <div className="footer-content">
           <div className="footer-logo">
@@ -272,7 +261,6 @@ export default function Footer() {
             <ul>
               <li><Link to="/">Accueil</Link></li>
               <li><Link to="/evenements">Nos événements</Link></li>
-              {/* LIEN RAPIDE DANS FOOTER -> PAGE DON */}
               <li><Link to="/don">Faire un don</Link></li> 
               <li><Link to="/carte-octobre-rose">La Carte Octobre Rose</Link></li> 
               <li><Link to="/contact">Contact</Link></li>
